@@ -3,6 +3,16 @@
 $green-color: #B5CA00;
 $back-color: #CBC6C6;
 
+%form-fields {
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    max-width: 360px;
+    width: 100%;
+    height: 50px;
+}
+
 body, p, h1 {
     margin: 0;
 }
@@ -46,3 +56,54 @@ header {
     color: #FFFFFF;
 }
 
+.popup {
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    position: relative;
+    background-color: #999998;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    // visibility: hidden;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        width: 470px;
+        height: 585px;
+        left: 503px;
+        top: 20%;
+        background: #C4C4C4;
+        border-radius: 10px;
+
+        div {
+            margin-left: 55px;
+        }
+        p {
+            font-size: 1.25rem;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+        }
+        input {
+            @extend %form-fields;
+            outline-style: none;
+            margin-bottom: 19px;
+            padding-left: 24px;
+            &::placeholder {
+                font-size: 1.25rem;
+                color: #CBC6C6;
+            }
+        }
+        select {
+            display: block;
+            @extend %form-fields;
+            margin-bottom: 48px;
+        }
+        button {
+            width: 360px;
+        }
+    }
+}
