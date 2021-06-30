@@ -17,6 +17,10 @@ body, p, h1 {
     margin: 0;
 }
 
+input {
+    outline-style: none;
+}
+
 .body {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
@@ -65,7 +69,6 @@ header {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    // visibility: hidden;
 
     form {
         display: flex;
@@ -79,29 +82,24 @@ header {
         background: #C4C4C4;
         border-radius: 10px;
 
-        div {
-            margin-left: 55px;
-        }
-        p {
-            font-size: 1.25rem;
-            color: #FFFFFF;
-            margin-bottom: 10px;
-        }
-        input {
-            @extend %form-fields;
-            outline-style: none;
-            margin-bottom: 19px;
-            padding-left: 24px;
-            &::placeholder {
-                font-size: 1.25rem;
-                color: #CBC6C6;
-            }
-        }
-        select {
-            display: block;
-            @extend %form-fields;
-            margin-bottom: 48px;
-        }
+        // div {
+        //     margin-left: 55px;
+        // }
+        // p {
+        //     font-size: 1.25rem;
+        //     color: #FFFFFF;
+        //     margin-bottom: 10px;
+        // }
+        // input {
+            
+        //     outline-style: none;
+        //     margin-bottom: 19px;
+        //     padding-left: 24px;
+        //     &::placeholder {
+        //         font-size: 1.25rem;
+        //         color: #CBC6C6;
+        //     }
+        // }
         button {
             width: 360px;
         }
