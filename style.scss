@@ -8,9 +8,16 @@ $back-color: #CBC6C6;
     border: 1px solid #FFFFFF;
     box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    max-width: 360px;
+    max-width: 339px;
     width: 100%;
     height: 50px;
+    padding-left: 24px;
+}
+
+%often-font {
+    font-weight: 300;
+    color: $back-color;
+    font-size: 1.125rem;
 }
 
 body, p, h1 {
@@ -73,6 +80,7 @@ header {
     form {
         display: flex;
         flex-direction: column;
+        align-items: center;
         justify-content: center;
         position: absolute;
         width: 470px;
@@ -82,26 +90,86 @@ header {
         background: #C4C4C4;
         border-radius: 10px;
 
-        // div {
-        //     margin-left: 55px;
-        // }
-        // p {
-        //     font-size: 1.25rem;
-        //     color: #FFFFFF;
-        //     margin-bottom: 10px;
-        // }
-        // input {
-            
-        //     outline-style: none;
-        //     margin-bottom: 19px;
-        //     padding-left: 24px;
-        //     &::placeholder {
-        //         font-size: 1.25rem;
-        //         color: #CBC6C6;
-        //     }
-        // }
+        p {
+            color: #FFFFFF;
+            font-size: 1.125rem;
+            margin: 15px 0 10px 0;
+        }
+
         button {
             width: 360px;
         }
     }
 }
+
+.block {
+    max-width: 360px;
+    width: 100%;
+
+    .field {
+        @extend %form-fields;
+        &::placeholder {
+            @extend %often-font;
+        }
+    }
+}
+
+.selection {
+    position: relative;
+
+    &[data-state="active"] {
+        .list {
+            opacity: 1;
+        }
+    }
+
+    .default {
+        @extend %form-fields;
+        @extend %often-font;
+        display: flex;
+        align-items: center;
+        margin-bottom: 45px;
+        position: relative;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-image: url(img/arrow.svg);
+            background-repeat: no-repeat;
+            width: 28px;
+            height: 20px;
+            right: 25px;
+        }
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 52px;
+        left: 5px;
+        max-width: 350px;
+        width: 100%;
+        opacity: 0;
+    }
+
+    .list label {
+        display: flex;
+        align-items: center;
+        background: #FFFFFF;
+        border: 1px solid #C4C4C4;
+        height: 50px;
+        padding-left: 30px;
+        border-top: none;
+
+        &:last-child {
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+    }
+
+    input {
+        display: none;
+    }
+}
+
