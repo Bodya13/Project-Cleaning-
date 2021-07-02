@@ -8,7 +8,7 @@ $back-color: #CBC6C6;
     border: 1px solid #FFFFFF;
     box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
-    max-width: 339px;
+    max-width: 360px;
     width: 100%;
     height: 50px;
     padding-left: 24px;
@@ -20,7 +20,16 @@ $back-color: #CBC6C6;
     font-size: 1.125rem;
 }
 
-body, p, h1, h2 {
+%title-font {
+    font-size: 2.5rem;
+    color: #000000;
+    font-weight: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+body, p, h1, h2, h3, h5 {
     margin: 0;
 }
 
@@ -30,8 +39,8 @@ input {
 
 .body {
     font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
     max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
     color: #000;
 }
@@ -54,6 +63,7 @@ header {
         font-size: 2.5rem;
         line-height: 47px;
         margin: 30px 0;
+        font-weight: normal;
     }
 }
 
@@ -75,6 +85,7 @@ header {
     position: fixed;
     top: 0;
     background-color: #999998;
+    max-width: 1440px;
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -92,12 +103,6 @@ header {
         background: #C4C4C4;
         border-radius: 10px;
 
-        p {
-            color: #FFFFFF;
-            font-size: 1.125rem;
-            margin: 15px 0 10px 0;
-        }
-
         button {
             width: 360px;
         }
@@ -107,6 +112,12 @@ header {
 .block {
     max-width: 360px;
     width: 100%;
+
+    p {
+        color: #FFFFFF;
+        font-size: 1.125rem;
+        margin: 15px 0 10px 0;
+    }
 
     .field {
         @extend %form-fields;
@@ -136,7 +147,7 @@ header {
 
     &[data-state="active"] {
         .list {
-            opacity: 1;
+            display: flex;
         }
         .list label:hover {
             background-color: #f1f1f1;
@@ -170,14 +181,13 @@ header {
     }
 
     .list {
-        display: flex;
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 52px;
+        top: 50px;
         left: 5px;
         max-width: 350px;
         width: 100%;
-        opacity: 0;
         transition: all 0.3s ease-out;
     }
 
@@ -204,20 +214,133 @@ header {
 
 .success {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: absolute;
     width: 470px;
     height: 256px;
+    padding: 0 14px;
     left: 503px;
     top: 213px;
     background: #C4C4C4;
     border-radius: 10px;
-    font-weight: bold;
-    font-size: 2.5rem;
     color: #FFFFFF;
+    font-weight: bold;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
 
     p {
         font-size: 1.125rem;
+    }
+}
+
+.content {
+    padding: 60px 13%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        @extend %title-font;
+        margin-bottom: 50px;
+    }
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .feature {
+        width: 22%;
+        .feat-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+        }
+
+        h3 {
+            color: #000000;
+            font-size: 1.45rem;
+            font-weight: normal;
+            margin: 30px 0 10px 0;
+        }
+
+        .red-line {
+            width: 94px;
+            border-top: 1px solid #F6C6CF;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+    }
+}
+
+.survey-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .announcement{
+        padding: 40px 13%;
+        display: flex;
+        align-items: flex-end;
+        h2{
+            @extend %title-font;
+            margin: 0 20px;
+        }
+    }
+}
+
+.survey {
+    padding: 95px 13% 0 13%;
+    background: #8664C6;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 502px;
+
+    .human {
+        flex: 1;
+    }
+
+    form {
+        flex: 4;
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+
+        .block:nth-child(1), .block:nth-child(3) {
+            margin-right: 120px;
+        }
+        .green-btn {
+            margin-top: 50px;
+        }
+    }
+}
+
+footer {
+    h2 {
+        @extend %title-font;
+    }
+
+    .answers {
+        margin: 60px 0;
+        h5 {
+            font-weight: normal;
+            font-size: 1.45rem;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-bottom: 35px;
+        }
     }
 }
