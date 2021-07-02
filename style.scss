@@ -20,7 +20,7 @@ $back-color: #CBC6C6;
     font-size: 1.125rem;
 }
 
-body, p, h1 {
+body, p, h1, h2 {
     margin: 0;
 }
 
@@ -65,13 +65,15 @@ header {
     font-weight: 700;
     font-size: 1.125rem;
     color: #FFFFFF;
+    cursor: pointer;
 }
 
 .popup {
-    display: flex;
+    display: none;
     justify-content: center;
     z-index: 100;
-    position: relative;
+    position: fixed;
+    top: 0;
     background-color: #999998;
     width: 100%;
     height: 100vh;
@@ -108,9 +110,24 @@ header {
 
     .field {
         @extend %form-fields;
+        font-size: 1.125rem;
         &::placeholder {
             @extend %often-font;
         }
+    }
+    .phone {
+        position: relative;
+        &::before {
+            content: "♥";
+            display: block;
+            background-image: url(img/line.png);
+            height: 50px;
+            width: 1px;
+            position: absolute;
+            left: 50px;
+            top: 0;
+        }
+
     }
 }
 
@@ -121,6 +138,14 @@ header {
         .list {
             opacity: 1;
         }
+        .list label:hover {
+            background-color: #f1f1f1;
+        }
+        .default::after {
+            transform: rotate(180deg);
+            transition: all .2s ease;
+            right: 28px; 
+        }
     }
 
     .default {
@@ -130,6 +155,7 @@ header {
         align-items: center;
         margin-bottom: 45px;
         position: relative;
+        cursor: pointer;
         &::after {
             content: "";
             display: block;
@@ -139,6 +165,7 @@ header {
             width: 28px;
             height: 20px;
             right: 25px;
+            transition: all .2s ease;
         }
     }
 
@@ -151,6 +178,7 @@ header {
         max-width: 350px;
         width: 100%;
         opacity: 0;
+        transition: all 0.3s ease-out;
     }
 
     .list label {
@@ -161,6 +189,7 @@ header {
         height: 50px;
         padding-left: 30px;
         border-top: none;
+        cursor: pointer;
 
         &:last-child {
             border-bottom-left-radius: 5px;
@@ -173,3 +202,22 @@ header {
     }
 }
 
+.success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 470px;
+    height: 256px;
+    left: 503px;
+    top: 213px;
+    background: #C4C4C4;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: #FFFFFF;
+
+    p {
+        font-size: 1.125rem;
+    }
+}

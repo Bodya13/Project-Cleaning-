@@ -9,17 +9,17 @@
 </head>
 <body>
     <div class="body">
-        <!-- <header>
+        <header>
             <div>
                 <p>Требуются специалисты по уборке</p>
                 <h1>Надежный доход <br>
                     и удобный график работы</h1>
-                <button type="button" class="green-btn">Записаться</button>
+                <button type="button" class="green-btn sign-up">Записаться</button>
             </div>
             <div>
                 <img src="img/header-picture.jpg" alt="">
             </div>
-        </header> -->
+        </header>
         <div class="popup">
             <form action="">
                 <div class="block">
@@ -28,11 +28,11 @@
                 </div>
                 <div class="block">
                     <p>Дата рождения</p>
-                    <input type="text" name="" id="" placeholder="22.03.1975" class="field">
+                    <input type="text" name="" id="" placeholder="22.03.1975" class="field date">
                 </div>
                 <div class="block">
                     <p>Телефон</p>
-                <input type="text" name="" id="" placeholder="+7" class="field">
+                <input type="text" name="" id="" placeholder="+380" class="field phone">
                 </div>
                 <div class="block">
                     <p>Гражданство</p>
@@ -43,15 +43,20 @@
                             <label for="russian">Россия</label>
                             <input id="ukraine" type="radio" value="ukraine" name="select"/>
                             <label for="ukraine">Украина</label>
+                            <input id="qazaqstan" type="radio" value="qazaqstan" name="select"/>
+                            <label for="qazaqstan">Казахстан</label>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <button type="button" class="green-btn">Записаться на собеседование</button>
+                    <button type="button" class="green-btn submit-btn">Записаться на собеседование</button>
                 </div>
             </form>
         </div>
     </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="inputmask/dist/jquery.inputmask.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
