@@ -28,8 +28,6 @@ signUp.addEventListener('click', () => {
 })
 
 
-
-
 console.log(submitBtn);
 submitBtn.addEventListener('click', function(){
   console.log('test');
