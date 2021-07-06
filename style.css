@@ -68,29 +68,53 @@ button {
 }
 
 header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-left: 13%;
+  width: 100%;
+  max-width: 1440px;
+  height: 532px;
+  position: relative;
 }
 
-header p {
+header .header-picture {
+  background-image: url(img/header-picture.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  max-width: 874px;
+  height: 532px;
+  position: absolute;
+  right: 0;
+}
+
+.title {
+  position: absolute;
+  width: 350px;
+  left: 13%;
+  top: 164px;
+  z-index: 20;
+}
+
+.title p {
   font-weight: 700;
   font-size: 1.25rem;
   color: #B5CA00;
 }
 
-header h1 {
+.title h1 {
   font-size: 2.5rem;
   line-height: 47px;
   margin: 30px 0;
   font-weight: normal;
+}
+
+.btn-and-logo {
+  position: absolute;
+  z-index: 20;
+  left: 13%;
+  top: 391px;
+}
+
+.btn-and-logo img {
+  display: none;
 }
 
 .green-btn {
@@ -414,19 +438,24 @@ header h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  max-width: 840px;
+  width: 100%;
+  position: relative;
 }
 
 .survey form .block:nth-child(1), .survey form .block:nth-child(3) {
-  margin-right: 120px;
+  margin-right: 20px;
 }
 
-.survey form .green-btn {
-  margin-top: 50px;
+.survey .green-btn {
+  position: absolute;
+  right: 0;
+  bottom: -99px;
 }
 
 footer .answers {

@@ -50,10 +50,29 @@ button {
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 13%;
+    width: 100%;
+    max-width: 1440px;
+    height: 532px;
+    position: relative;
+
+    .header-picture {
+        background-image: url(img/header-picture.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        max-width: 874px;
+        height: 532px;
+        position: absolute;
+        right: 0;
+    }
+}
+
+.title {
+    position: absolute;
+    width: 350px;
+    left: 13%;
+    top: 164px;
+    z-index: 20;
     p {
         font-weight: 700;
         font-size: 1.25rem; 
@@ -64,6 +83,17 @@ header {
         line-height: 47px;
         margin: 30px 0;
         font-weight: normal;
+    }
+}
+
+.btn-and-logo {
+    position: absolute;
+    z-index: 20;
+    left: 13%;
+    top: 391px;
+
+    img {
+        display: none;
     }
 }
 
@@ -314,15 +344,21 @@ header {
     form {
         flex: 4;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         flex-wrap: wrap;
+        max-width: 840px;
+        width: 100%;
+        position: relative;
 
         .block:nth-child(1), .block:nth-child(3) {
-            margin-right: 120px;
+            margin-right: 20px;
         }
-        .green-btn {
-            margin-top: 50px;
-        }
+    }
+
+    .green-btn {
+        position: absolute;
+        right: 0;
+        bottom: -99px;
     }
 }
 
