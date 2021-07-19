@@ -159,5 +159,11 @@
   .item h3 {
     margin: 0 !important;
   }
+  .features .feature {
+    width: 90%;
+  }
+  .features .feature:nth-child(3) {
+    margin-bottom: 55px;
+  }
 }
 /*# sourceMappingURL=media.css.map */
